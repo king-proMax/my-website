@@ -1,0 +1,30 @@
+<head>
+<meta charset="UTF-8">
+<title>حاسبة النسبة</title>
+<style>
+body{font-family:Arial;background:#f8f9fa;padding:30px;}
+.container{max-width:450px;margin:auto;background:#fff;padding:20px;border-radius:12px;box-shadow:0 0 10px #ddd;text-align:center;}
+input{padding:10px;width:80%;border-radius:8px;border:1px solid #aaa;margin:5px;}
+button{padding:10px 20px;background:#dc3545;color:white;border:none;border-radius:8px;}
+</style>
+</head>
+<body>
+
+<div class="container">
+<h2>حاسبة النسبة</h2>
+<input id="num" type="number" placeholder="الرقم">
+<input id="per" type="number" placeholder="النسبة %">
+<button onclick="calc()">احسب</button>
+<div id="res" style="margin-top:20px;font-size:20px;"></div>
+</div>
+
+<script>
+function calc(){
+let n=+document.getElementById("num").value;
+let p=+document.getElementById("per").value;
+document.getElementById("res").textContent=(n*(p/100)).toFixed(2);
+}
+</script>
+
+</body>
+</html>

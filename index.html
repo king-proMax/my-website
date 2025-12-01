@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أدوات بلس | Tools Plus</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="light">
+
+    <!-- زر تبديل الوضع -->
+    <div class="theme-switch">
+        <label class="switch">
+            <input type="checkbox" id="toggleTheme">
+            <span class="slider round"></span>
+        </label>
+        <span>الوضع الليلي</span>
+    </div>
+
+    <!-- القائمة الجانبية للأدوات -->
+    <div class="sidebar">
+        <button class="tool-btn" data-tool="word-counter">عداد الكلمات</button>
+        <button class="tool-btn" data-tool="case-converter">تحويل النص</button>
+        <button class="tool-btn" data-tool="age-calculator">حاسبة العمر</button>
+        <button class="tool-btn" data-tool="discount-calculator">حاسبة الخصم</button>
+        <button class="tool-btn" data-tool="password-generator">مولد كلمات المرور</button>
+        <button class="tool-btn" data-tool="trim-tool">تنظيف النصوص</button>
+        <button class="tool-btn" data-tool="time-converter">تحويل الوقت</button>
+        <button class="tool-btn" data-tool="text-merger">دمج النصوص</button>
+        <button class="tool-btn" data-tool="percentage-calculator">حاسبة النسبة</button>
+        <button class="tool-btn" data-tool="char-counter">عداد الحروف</button>
+    </div>
+
+    <!-- النوافذ المنبثقة -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <iframe id="toolFrame" src="" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

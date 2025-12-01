@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>عداد الكلمات</title>
+<style>
+body{font-family:Arial;background:#f8f9fa;padding:30px;}
+.container{max-width:600px;margin:auto;background:#fff;padding:20px;border-radius:12px;box-shadow:0 0 10px #ddd;}
+textarea{width:100%;height:160px;padding:10px;border-radius:10px;margin-top:10px;border:1px solid #ccc;}
+.result{margin-top:15px;font-size:18px;background:#1e8f5f;color:white;padding:10px;border-radius:8px;text-align:center;}
+</style>
+</head>
+<body>
+<div class="container">
+<h2>عداد الكلمات</h2>
+<textarea id="text"></textarea>
+<div class="result">الكلمات: <span id="words">0</span> — الحروف: <span id="chars">0</span></div>
+</div>
+
+<script>
+let t=document.getElementById("text");
+t.addEventListener("input",()=>{
+let v=t.value.trim();
+document.getElementById("chars").textContent=v.length;
+let w=v.split(/\s+/).filter(w=>w.length>0);
+document.getElementById("words").textContent=w.length;
+});
+</script>
+</body>
+</html><!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>عداد الكلمات</title>
+<style>
+body{font-family:Arial;background:#f8f9fa;padding:30px;}
+.container{max-width:600px;margin:auto;background:#fff;padding:20px;border-radius:12px;box-shadow:0 0 10px #ddd;}
+textarea{width:100%;height:160px;padding:10px;border-radius:10px;margin-top:10px;border:1px solid #ccc;}
+.result{margin-top:15px;font-size:18px;background:#1e8f5f;color:white;padding:10px;border-radius:8px;text-align:center;}
+</style>
+</head>
+<body>
+<div class="container">
+<h2>عداد الكلمات</h2>
+<textarea id="text"></textarea>
+<div class="result">الكلمات: <span id="words">0</span> — الحروف: <span id="chars">0</span></div>
+</div>
+
+<script>
+let t=document.getElementById("text");
+t.addEventListener("input",()=>{
+let v=t.value.trim();
+document.getElementById("chars").textContent=v.length;
+let w=v.split(/\s+/).filter(w=>w.length>0);
+document.getElementById("words").textContent=w.length;
+});
+</script>
+</body>
+</html>

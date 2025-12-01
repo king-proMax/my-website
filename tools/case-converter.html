@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>تحويل حالة الأحرف</title>
+<style>
+body{font-family:Arial;background:#f2f2f2;padding:30px;}
+.container{max-width:600px;margin:auto;background:#fff;padding:20px;border-radius:12px;box-shadow:0 0 10px #ccc;}
+textarea{width:100%;height:150px;padding:10px;border-radius:10px;border:1px solid #ccc;margin-top:10px;}
+button{padding:10px 15px;margin:5px;border:none;background:#007bff;color:white;border-radius:8px;cursor:pointer;}
+button:hover{opacity:.9;}
+</style>
+</head>
+<body>
+
+<div class="container">
+<h2>تحويل النص</h2>
+<textarea id="input"></textarea>
+
+<button onclick="upper()">تحويل إلى UPPERCASE</button>
+<button onclick="lower()">تحويل إلى lowercase</button>
+<button onclick="capital()">تحويل إلى Capital Case</button>
+
+</div>
+
+<script>
+function upper(){document.getElementById("input").value=document.getElementById("input").value.toUpperCase();}
+function lower(){document.getElementById("input").value=document.getElementById("input").value.toLowerCase();}
+function capital(){
+let t=document.getElementById("input").value.toLowerCase().split(" ");
+t=t.map(w=>w.charAt(0).toUpperCase()+w.slice(1));
+document.getElementById("input").value=t.join(" ");
+}
+</script>
+
+</body>
+</html>

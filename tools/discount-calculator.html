@@ -1,34 +1,52 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<title>حاسبة الخصم</title>
-<style>
-body{font-family:Arial;background:#fafafa;padding:30px;}
-.container{max-width:450px;margin:auto;background:#fff;padding:20px;border-radius:12px;box-shadow:0 0 10px #ddd;text-align:center;}
-input{width:80%;padding:10px;margin:8px;border-radius:8px;border:1px solid #aaa;}
-button{padding:10px 20px;background:#ff5733;color:white;border:none;border-radius:8px;margin-top:10px;}
-.result{font-size:20px;margin-top:20px;}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حاسبة الخصم - MyTools</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
+    <nav class="navbar">
+        <a href="../index.html" class="logo">MyTools 🛠️</a>
+        <button id="theme-toggle" class="btn">🌙</button>
+    </nav>
 
-<div class="container">
-<h2>حاسبة الخصم</h2>
-<input id="price" type="number" placeholder="السعر">
-<input id="discount" type="number" placeholder="نسبة الخصم %">
-<button onclick="calc()">احسب</button>
-<div id="res" class="result"></div>
-</div>
+    <div class="container">
+        <div class="tool-container">
+            <h2>🏷️ حاسبة الخصومات</h2>
 
-<script>
-function calc(){
-let p=+document.getElementById("price").value;
-let d=+document.getElementById("discount").value;
-let final=p - (p*(d/100));
-document.getElementById("res").textContent="السعر بعد الخصم: " + final.toFixed(2) + " ر.س";
-}
-</script>
+            <label>السعر الأصلي:</label>
+            <input type="number" id="originalPrice" placeholder="مثلاً: 100">
 
+            <label>نسبة الخصم (%):</label>
+            <input type="number" id="discountPercent" placeholder="مثلاً: 20">
+
+            <button class="btn" onclick="calculateDiscount()" style="width: 100%; margin-top: 10px;">احسب السعر الجديد</button>
+
+            <div class="result-box" id="result">
+                السعر النهائي: 0 <br>
+                قيمة التوفير: 0
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        function calculateDiscount() {
+            const price = parseFloat(document.getElementById('originalPrice').value);
+            const discount = parseFloat(document.getElementById('discountPercent').value);
+
+            if (!price || !discount) return;
+
+            const savedAmount = (price * discount) / 100;
+            const finalPrice = price - savedAmount;
+
+            document.getElementById('result').innerHTML = `
+                    السعر بعد الخصم: <strong style="color:green">${finalPrice.toFixed(2)}</strong> <br>
+                    لقد وفرت: <strong>${savedAmount.toFixed(2)}</strong>
+                `;
+        }
+    </script>
 </body>
 </html>

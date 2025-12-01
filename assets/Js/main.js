@@ -1,33 +1,27 @@
-// ===== تبديل الوضع النهاري / الليلي =====
-const toggle = document.getElementById('toggleTheme');
-toggle.addEventListener('change', () => {
-    document.body.classList.toggle('dark');
-});
+// وظيفة الوضع الليلي
+const themeToggleBtn = document.getElementById('theme-toggle');
+const body = document.body;
 
-// ===== فتح النوافذ المنبثقة للأدوات =====
-const toolBtns = document.querySelectorAll('.tool-btn');
-const popup = document.getElementById('popup');
-const toolFrame = document.getElementById('toolFrame');
-const closeBtn = document.querySelector('.close');
+// 1. التحقق مما إذا كان المستخدم قد حفظ الوضع مسبقاً
+const currentTheme = localStorage.getItem('theme');
 
-toolBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        const tool = btn.getAttribute('data-tool');
-        toolFrame.src = `tools/${tool}.html`;  // رابط الأداة
-        popup.style.display = 'flex';
+if (currentTheme === 'dark') {
+    body.classList.add('dark-mode');
+    if(themeToggleBtn) themeToggleBtn.textContent = '☀️ الوضع النهاري';
+}
+
+// 2. تشغيل الزر عند الضغط عليه
+if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+
+        // حفظ الاختيار في الذاكرة
+        if (body.classList.contains('dark-mode')) {
+            localStorage.setItem('theme', 'dark');
+            themeToggleBtn.textContent = '☀️ الوضع النهاري';
+        } else {
+            localStorage.setItem('theme', 'light');
+            themeToggleBtn.textContent = '🌙 الوضع الليلي';
+        }
     });
-});
-
-// إغلاق النافذة
-closeBtn.addEventListener('click', () => {
-    popup.style.display = 'none';
-    toolFrame.src = '';
-});
-
-// إغلاق عند الضغط خارج المحتوى
-window.addEventListener('click', e => {
-    if (e.target === popup) {
-        popup.style.display = 'none';
-        toolFrame.src = '';
-    }
-});
+}

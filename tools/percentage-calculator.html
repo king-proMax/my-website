@@ -1,30 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<title>حاسبة النسبة</title>
-<style>
-body{font-family:Arial;background:#f8f9fa;padding:30px;}
-.container{max-width:450px;margin:auto;background:#fff;padding:20px;border-radius:12px;box-shadow:0 0 10px #ddd;text-align:center;}
-input{padding:10px;width:80%;border-radius:8px;border:1px solid #aaa;margin:5px;}
-button{padding:10px 20px;background:#dc3545;color:white;border:none;border-radius:8px;}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حاسبة النسبة المئوية - MyTools</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
+    <nav class="navbar">
+        <a href="../index.html" class="logo">MyTools 🛠️</a>
+        <button id="theme-toggle" class="btn">🌙</button>
+    </nav>
 
-<div class="container">
-<h2>حاسبة النسبة</h2>
-<input id="num" type="number" placeholder="الرقم">
-<input id="per" type="number" placeholder="النسبة %">
-<button onclick="calc()">احسب</button>
-<div id="res" style="margin-top:20px;font-size:20px;"></div>
-</div>
+    <div class="container">
+        <div class="tool-container">
+            <h2>📊 حاسبة النسبة المئوية</h2>
 
-<script>
-function calc(){
-let n=+document.getElementById("num").value;
-let p=+document.getElementById("per").value;
-document.getElementById("res").textContent=(n*(p/100)).toFixed(2);
-}
-</script>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <input type="number" id="num1" placeholder="الرقم (مثلاً 20)">
+                <span>هو كم % من</span>
+                <input type="number" id="num2" placeholder="الإجمالي (مثلاً 50)">
+            </div>
 
+            <button class="btn" onclick="calcPercent()" style="width: 100%; margin-top: 10px;">احسب النتيجة</button>
+
+            <div class="result-box" id="result">النتيجة: 0%</div>
+        </div>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        function calcPercent() {
+            const n1 = parseFloat(document.getElementById('num1').value);
+            const n2 = parseFloat(document.getElementById('num2').value);
+
+            if (!n1 || !n2) return;
+
+            const res = (n1 / n2) * 100;
+            document.getElementById('result').textContent = "النتيجة: " + res.toFixed(2) + "%";
+        }
+    </script>
 </body>
 </html>

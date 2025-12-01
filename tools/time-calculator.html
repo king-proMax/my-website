@@ -1,36 +1,37 @@
-!DOCTYPE>
+﻿<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<title>تحويل الوقت</title>
-<style>
-body{font-family:Arial;background:#fafafa;padding:30px;}
-.container{max-width:450px;margin:auto;background:#fff;padding:20px;border-radius:12px;box-shadow:0 0 10px #ddd;text-align:center;}
-input{padding:10px;width:80%;border-radius:8px;border:1px solid #aaa;margin:5px;}
-button{padding:10px 20px;background:#6f42c1;color:white;border:none;border-radius:8px;}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محول الوقت - MyTools</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
+    <nav class="navbar">
+        <a href="../index.html" class="logo">MyTools 🛠️</a>
+        <button id="theme-toggle" class="btn">🌙</button>
+    </nav>
 
-<div class="container">
-<h2>تحويل الوقت</h2>
-<input id="min" type="number" placeholder="دقائق">
-<button onclick="toHours()">إلى ساعات</button><br>
-<input id="hour" type="number" placeholder="ساعات">
-<button onclick="toMin()">إلى دقائق</button>
-<div id="res" style="margin-top:20px;font-size:20px;"></div>
-</div>
+    <div class="container">
+        <div class="tool-container">
+            <h2>⏰ محول الوقت (دقائق ⟷ ساعات)</h2>
 
-<script>
-function toHours(){
-let m=+document.getElementById("min").value;
-document.getElementById("res").textContent=(m/60).toFixed(2)+" ساعة";
-}
-function toMin(){
-let h=+document.getElementById("hour").value;
-document.getElementById("res").textContent=(h*60)+" دقيقة";
-}
-</script>
+            <label>الدقائق:</label>
+            <input type="number" id="minutes" oninput="convertToHours(this.value)">
 
+            <label>الساعات:</label>
+            <input type="number" id="hours" oninput="convertToMinutes(this.value)">
+        </div>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        function convertToHours(mins) {
+            document.getElementById('hours').value = (mins / 60).toFixed(2);
+        }
+        function convertToMinutes(hrs) {
+            document.getElementById('minutes').value = (hrs * 60).toFixed(0);
+        }
+    </script>
 </body>
 </html>

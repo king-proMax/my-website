@@ -1,43 +1,53 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أدوات بلس | Tools Plus</title>
+    <title>MyTools - أدواتك اليومية</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="light">
+<body>
 
-    <!-- زر تبديل الوضع -->
-    <div class="theme-switch">
-        <label class="switch">
-            <input type="checkbox" id="toggleTheme">
-            <span class="slider round"></span>
-        </label>
-        <span>الوضع الليلي</span>
-    </div>
+    <nav class="navbar">
+        <div class="logo">MyTools 🛠️</div>
+        <button id="theme-toggle" class="btn">🌙 الوضع الليلي</button>
+    </nav>
 
-    <!-- القائمة الجانبية للأدوات -->
-    <div class="sidebar">
-        <button class="tool-btn" data-tool="word-counter">عداد الكلمات</button>
-        <button class="tool-btn" data-tool="case-converter">تحويل النص</button>
-        <button class="tool-btn" data-tool="age-calculator">حاسبة العمر</button>
-        <button class="tool-btn" data-tool="discount-calculator">حاسبة الخصم</button>
-        <button class="tool-btn" data-tool="password-generator">مولد كلمات المرور</button>
-        <button class="tool-btn" data-tool="trim-tool">تنظيف النصوص</button>
-        <button class="tool-btn" data-tool="time-converter">تحويل الوقت</button>
-        <button class="tool-btn" data-tool="text-merger">دمج النصوص</button>
-        <button class="tool-btn" data-tool="percentage-calculator">حاسبة النسبة</button>
-        <button class="tool-btn" data-tool="char-counter">عداد الحروف</button>
-    </div>
+    <header class="hero">
+        <h1>مجموعة أدوات ذكية لزيادة إنتاجيتك</h1>
+        <p>أدوات مجانية وسريعة للاستخدام اليومي</p>
+    </header>
 
-    <!-- النوافذ المنبثقة -->
-    <div id="popup" class="popup">
-        <div class="popup-content">
-            <span class="close">&times;</span>
-            <iframe id="toolFrame" src="" frameborder="0"></iframe>
+    <div class="container">
+        <div class="tools-grid">
+            <a href="tools/word-counter.html" class="tool-card">
+                <i class="fas fa-align-left"></i>
+                <h3>عداد الكلمات</h3>
+                <p>حساب عدد الكلمات والحروف في النص.</p>
+            </a>
+            <a href="tools/age-calculator.html" class="tool-card">
+                <i class="fas fa-birthday-cake"></i>
+                <h3>حاسبة العمر</h3>
+                <p>احسب عمرك بالتفصيل (السنة، الشهر، اليوم).</p>
+            </a>
+            <a href="tools/password-generator.html" class="tool-card">
+                <i class="fas fa-key"></i>
+                <h3>مولد كلمات مرور</h3>
+                <p>إنشاء كلمات مرور قوية وآمنة.</p>
+            </a>
+
+            <a href="tools/case-converter.html" class="tool-card">
+                <i class="fas fa-font"></i>
+                <h3>محول حالة الأحرف</h3>
+                <p>تحويل النص إلى أحرف كبيرة أو صغيرة.</p>
+            </a>
         </div>
     </div>
+
+    <footer>
+        <p>جميع الحقوق محفوظة © 2024 MyTools</p>
+    </footer>
 
     <script src="assets/js/main.js"></script>
 </body>

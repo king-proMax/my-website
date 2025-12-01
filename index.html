@@ -3,50 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyTools - أدواتك اليومية</title>
+    <title>MyTools - أدواتك الذكية</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="logo">MyTools 🛠️</div>
-        <button id="theme-toggle" class="btn">🌙 الوضع الليلي</button>
+        <div class="logo">MyTools <span style="color:var(--primary-color)">Pro</span></div>
+        <button id="theme-toggle" class="btn-icon"><i class="fas fa-moon"></i></button>
     </nav>
 
-    <header class="hero">
-        <h1>مجموعة أدوات ذكية لزيادة إنتاجيتك</h1>
-        <p>أدوات مجانية وسريعة للاستخدام اليومي</p>
-    </header>
+    <main class="main-content">
+        <header class="hero">
+            <h1>أدوات ذكية، حياة أسهل 🚀</h1>
+            <p>كل ما تحتاجه من أدوات في مكان واحد، مجاناً وسريع.</p>
+        </header>
 
-    <div class="container">
-        <div class="tools-grid">
-            <a href="tools/word-counter.html" class="tool-card">
-                <i class="fas fa-align-left"></i>
-                <h3>عداد الكلمات</h3>
-                <p>حساب عدد الكلمات والحروف في النص.</p>
-            </a>
-            <a href="tools/age-calculator.html" class="tool-card">
-                <i class="fas fa-birthday-cake"></i>
-                <h3>حاسبة العمر</h3>
-                <p>احسب عمرك بالتفصيل (السنة، الشهر، اليوم).</p>
-            </a>
-            <a href="tools/password-generator.html" class="tool-card">
-                <i class="fas fa-key"></i>
-                <h3>مولد كلمات مرور</h3>
-                <p>إنشاء كلمات مرور قوية وآمنة.</p>
-            </a>
+        <div class="container">
+            <div class="tools-grid">
 
-            <a href="tools/case-converter.html" class="tool-card">
-                <i class="fas fa-font"></i>
-                <h3>محول حالة الأحرف</h3>
-                <p>تحويل النص إلى أحرف كبيرة أو صغيرة.</p>
-            </a>
+                <a href="tools/word-counter.html" class="tool-card">
+                    <div class="icon-box"><i class="fas fa-align-left"></i></div>
+                    <h3>عداد الكلمات</h3>
+                    <p>احسب عدد الكلمات والحروف بدقة.</p>
+                </a>
+
+                <a href="tools/age-calculator.html" class="tool-card">
+                    <div class="icon-box"><i class="fas fa-birthday-cake"></i></div>
+                    <h3>حاسبة العمر</h3>
+                    <p>اعرف عمرك بالسنة والشهر واليوم.</p>
+                </a>
+
+                <a href="tools/password-generator.html" class="tool-card">
+                    <div class="icon-box"><i class="fas fa-key"></i></div>
+                    <h3>مولد باسوورد</h3>
+                    <p>أنشئ كلمات مرور قوية وآمنة.</p>
+                </a>
+
+                <a href="tools/case-converter.html" class="tool-card">
+                    <div class="icon-box"><i class="fas fa-font"></i></div>
+                    <h3>محول الحروف</h3>
+                    <p>تحويل الإنجليزي إلى كابيتال/سمول.</p>
+                </a>
+
+                <a href="tools/discount-calculator.html" class="tool-card">
+                    <div class="icon-box"><i class="fas fa-tags"></i></div>
+                    <h3>حاسبة الخصم</h3>
+                    <p>احسب السعر النهائي بعد التخفيض.</p>
+                </a>
+
+                <a href="tools/time-converter.html" class="tool-card">
+                    <div class="icon-box"><i class="fas fa-clock"></i></div>
+                    <h3>محول الوقت</h3>
+                    <p>تحويل الدقائق إلى ساعات والعكس.</p>
+                </a>
+
+            </div>
         </div>
-    </div>
+    </main>
 
-    <footer>
-        <p>جميع الحقوق محفوظة © 2024 MyTools</p>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p class="copyright">
+                Developed with ❤️ by <span class="dev-name">Moaz</span>
+            </p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <span class="separator">•</span>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
     </footer>
 
     <script src="assets/js/main.js"></script>
